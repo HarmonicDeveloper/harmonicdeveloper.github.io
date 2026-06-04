@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compu - Precision Scientific Calculator And Graph Plotter| Harmonic Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="stylesheet" href="styles_mini.css">  
+	<script>
+		fetch('compu_images.json')
+		  .then(response => {
+			if (!response.ok) {
+			  throw new Error("Could not load the images");
+			}
+			return response.json();
+		  })
+		  .then(data => {
+			const gallery = document.getElementById('image-gallery');
+			data.forEach(item => {
+			  const linkElement = document.createElement('a');
+			  linkElement.href = item.href;
+			  linkElement.target = "_blank"; // Optional: opens link in new tab
+
+			  const imageElement = document.createElement('img');
+			  imageElement.src = item.src;
+			  imageElement.alt = item.alt;
+			  imageElement.class = "screenshot-img";
+
+			  linkElement.appendChild(imageElement);
+			  gallery.appendChild(linkElement);
+			});
+		  })
+		  .catch(error => {
+			console.error('Error loading images:', error);
+		  });
+	</script>
+</head>
+<body class="page-details theme-compu">
+
+    <nav>
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back
+        </a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <img src="https://play-lh.googleusercontent.com/1fnr0G4JcvjnoCT_YFaqyUXN7iWN86PwyBIuUgcXs4cvDfwZAEC2prfk5PsyFKP3TeIoZI_ozubonI1rvINSew=w480-h960-rw" alt="Compu App Logo" class="app-logo-hero">
+            
+            <div class="hero-text">
+                <h1>Compu: The Precision <br>Scientific Calculator<br>& Graph Plotter</h1>
+                <div class="developer-tag">by Harmonic Developer</div>
+                <p>Experience 20 Significant Digits of absolute precision-tailored specifically for Science, Finance, and Engineering.</p>
+                
+                <a href="https://play.google.com/store/apps/details?id=harmonic.developer.compu" target="_blank" class="play-btn">
+                    <i class="fab fa-google-play"></i> Download on Google Play
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <div class="section-header">
+            <h2>📱 Preview</h2>
+        </div>
+        
+        <div class="screenshots-wrapper">
+            <div id="image-gallery" class="screenshots-carousel"/>
+        </div>
+        
+        <div class="section-header">
+            <h2>✨ Key Features</h2>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card glass-panel">
+                <div class="feature-icon">🔢</div>
+                <h3>High Precision</h3>
+                <p>Reliable accuracy engineered to provide exactly 20 significant digits for your most demanding computational needs.</p>
+            </div>
+
+            <div class="feature-card glass-panel">
+                <div class="feature-icon">📈</div>
+                <h3>Graph Plotting</h3>
+                <p>Visualize mathematical functions and complex equations instantly with our built-in 2D graphing capabilities.</p>
+            </div>
+            
+            <div class="feature-card glass-panel">
+                <div class="feature-icon">📑</div>
+                <h3>Calculation Steps</h3>
+                <p>Track the logic. View step-by-step breakdowns of your calculations to ensure accuracy and procedural correctness.</p>
+            </div>
+            
+            <div class="feature-card glass-panel">
+                <div class="feature-icon">📝</div>
+                <h3>Equation View</h3>
+                <p>Visualize complex formulas exactly as they are written, eliminating parenthesis confusion and syntax errors.</p>
+            </div>
+            
+            <div class="feature-card glass-panel">
+                <div class="feature-icon">📂</div>
+                <h3>Multiple Workspaces</h3>
+                <p>Run and manage multiple, independent calculation environments simultaneously without losing your context.</p>
+            </div>
+            
+            <div class="feature-card glass-panel">
+                <div class="feature-icon">📜</div>
+                <h3>Local History</h3>
+                <p>Quickly revisit and reuse your past calculations- directly from an easily accessible local history log.</p>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h2>🛠️ Powerful Functionalities</h2>
+        </div>
+
+        <div class="func-grid">
+            
+            <div class="func-category glass-panel">
+                <h3>Core Mathematics</h3>
+                <ul class="func-list">
+                    <li><i class="fas fa-check"></i> <div><strong>Basic Arithmetic:</strong>
+                    <br>+, - , × , ÷ </div></li>
+                    <li><i class="fas fa-check"></i> <div><strong>Power & Roots:</strong> 
+                    <br>|x| , x² , xʸ , √ , ˣ√</div></li>
+                    <li><i class="fas fa-check"></i> <div><strong>Logarithms:</strong>
+                    <br>ln(x) , logₐ(x)</div></li>
+                    <li><i class="fas fa-check"></i> <div><strong>Factorials:</strong>
+                    <br>n! 
+                    <br>(Supports massively large numbers, limited only by time and memory.)</div></li>
+                </ul>
+            </div>
+
+            <div class="func-category glass-panel">
+                <h3>Trigonometry</h3>
+                <ul class="func-list">
+                    <li><i class="fas fa-check"></i> <div><strong>Standard:</strong> 
+                    <br>sin(x), cos(x), tan(x), 
+                    <br>sec(x), csc(x), cot(x)</div></li>
+                    <li><i class="fas fa-check"></i> <div><strong>Inverse:</strong>
+                    <br>sin⁻¹(x), cos⁻¹(x), tan⁻¹(x), 
+                    <br>sec⁻¹(x), csc⁻¹(x), cot⁻¹(x)</div></li>
+                    <li><i class="fas fa-check"></i> <div><strong>Conversion:</strong>
+                    <br>Degree ⇄ Radian</div></li>
+                </ul>
+            </div>
+
+            <div class="func-category glass-panel">
+                <h3>Hyperbolic Functions</h3>
+                <ul class="func-list">
+                    <li><i class="fas fa-check"></i> <div><strong>Hyperbolic:</strong>
+                    <br>sinh(x), cosh(x), tanh(x),
+                    <br>sech(x), csch(x), coth(x)</div></li>
+                    <li><i class="fas fa-check"></i> <div><strong>Inverse:</strong>
+                    <br>sinh⁻¹(x), cosh⁻¹(x), tanh⁻¹(x),
+                    <br>sech⁻¹(x), csch⁻¹(x), coth⁻¹(x)</div></li>
+                </ul>
+            </div>
+            
+        </div>
+
+        <div class="banner-container">
+            
+            <div class="banner banner-warning glass-panel">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div class="banner-content">
+                    <h4 style="color: var(--alert-warning);">Limitations</h4>
+                    <p>Complex numbers are not supported yet. This functionality is planned for future architecture updates.</p>
+                </div>
+            </div>
+
+            <div class="banner banner-info glass-panel">
+                <i class="fas fa-rocket"></i>
+                <div class="banner-content">
+                    <h4 style="color: var(--alert-info);">Under Active Development</h4>
+                    <p>Compu is continuously evolving! We are currently in the development stage, and even more powerful computational features are already on the way.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="mailto:harmonic.developer@gmail.com">
+    <i class="fas fa-envelope"></i> harmonic.developer@gmail.com</a>
+            <a href="https://sites.google.com/view/computhecalculator/home"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+        </div>
+        <p>&copy; 2026 Harmonic Developer. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
